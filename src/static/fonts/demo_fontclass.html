@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IconFont</title>
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="iconfont.css">
+</head>
+<body>
+    <div class="main markdown">
+        <h1>IconFont 图标</h1>
+        <ul class="icon_lists clear">
+            
+                <li>
+                <i class="icon iconfont icon-yingdaicon04"></i>
+                    <div class="name">weixin</div>
+                    <div class="fontclass">.icon-yingdaicon04</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-guanbi"></i>
+                    <div class="name">关闭</div>
+                    <div class="fontclass">.icon-guanbi</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-radio-checked"></i>
+                    <div class="name">单选选中</div>
+                    <div class="fontclass">.icon-radio-checked</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xuanzhong1"></i>
+                    <div class="name">选中</div>
+                    <div class="fontclass">.icon-xuanzhong1</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-2"></i>
+                    <div class="name">感叹号</div>
+                    <div class="fontclass">.icon-2</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xiala"></i>
+                    <div class="name">下拉</div>
+                    <div class="fontclass">.icon-xiala</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-tianjia"></i>
+                    <div class="name">添加</div>
+                    <div class="fontclass">.icon-tianjia</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-point-copy-copy"></i>
+                    <div class="name">圆点</div>
+                    <div class="fontclass">.icon-point-copy-copy</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xiayige"></i>
+                    <div class="name">下一个</div>
+                    <div class="fontclass">.icon-xiayige</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-circle"></i>
+                    <div class="name">圆点</div>
+                    <div class="fontclass">.icon-circle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xuanzhong"></i>
+                    <div class="name">选中</div>
+                    <div class="fontclass">.icon-xuanzhong</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-shijian"></i>
+                    <div class="name">时间</div>
+                    <div class="fontclass">.icon-shijian</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-guanbi1"></i>
+                    <div class="name">关闭</div>
+                    <div class="fontclass">.icon-guanbi1</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xiala1"></i>
+                    <div class="name">下拉</div>
+                    <div class="fontclass">.icon-xiala1</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-zhifubao"></i>
+                    <div class="name">支付宝</div>
+                    <div class="fontclass">.icon-zhifubao</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-qianjinxiayige"></i>
+                    <div class="name">前进 下一个</div>
+                    <div class="fontclass">.icon-qianjinxiayige</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-zhifubao1"></i>
+                    <div class="name">支付宝</div>
+                    <div class="fontclass">.icon-zhifubao1</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-shijian1"></i>
+                    <div class="name">时间</div>
+                    <div class="fontclass">.icon-shijian1</div>
+                </li>
+            
+        </ul>
+
+        <h2 id="font-class-">font-class引用</h2>
+        <hr>
+
+        <p>font-class是unicode使用方式的一种变种，主要是解决unicode书写不直观，语意不明确的问题。</p>
+        <p>与unicode使用方式相比，具有如下特点：</p>
+        <ul>
+        <li>兼容性良好，支持ie8+，及所有现代浏览器。</li>
+        <li>相比于unicode语意明确，书写更直观。可以很容易分辨这个icon是什么。</li>
+        <li>因为使用class来定义图标，所以当要替换图标时，只需要修改class里面的unicode引用。</li>
+        <li>不过因为本质上还是使用的字体，所以多色图标还是不支持的。</li>
+        </ul>
+        <p>使用步骤如下：</p>
+        <h3 id="-fontclass-">第一步：引入项目下面生成的fontclass代码：</h3>
+
+
+        <pre><code class="lang-js hljs javascript"><span class="hljs-comment">&lt;link rel="stylesheet" type="text/css" href="./iconfont.css"&gt;</span></code></pre>
+        <h3 id="-">第二步：挑选相应图标并获取类名，应用于页面：</h3>
+        <pre><code class="lang-css hljs">&lt;<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">class</span>="<span class="hljs-selector-tag">iconfont</span> <span class="hljs-selector-tag">icon-xxx</span>"&gt;&lt;/<span class="hljs-selector-tag">i</span>&gt;</code></pre>
+        <blockquote>
+        <p>"iconfont"是你项目下的font-family。可以通过编辑项目查看，默认是"iconfont"。</p>
+        </blockquote>
+    </div>
+</body>
+</html>

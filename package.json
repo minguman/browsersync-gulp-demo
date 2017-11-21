@@ -1,0 +1,49 @@
+{
+  "name": "pay-mobile",
+  "version": "0.0.1",
+  "description": "移动支付",
+  "main": "api.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://zuojiquan@git.hapn.cc:20443/hangzhou/pay-mobile.git"
+  },
+  "author": "laozuo",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "css-loader": "^0.28.7",
+    "del": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-file-include": "^1.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-wrap": "^0.13.0",
+    "merge-stream": "^1.0.1",
+    "path": "^0.12.7",
+    "pxtorem2": "^0.1.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack-stream": "^4.0.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.10",
+    "handlebars-loader": "^1.6.0"
+  }
+}
