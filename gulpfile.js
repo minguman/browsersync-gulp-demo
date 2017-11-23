@@ -14,7 +14,6 @@ var fileinclude  = require('gulp-file-include');
 var mergeStream = require('merge-stream');
 var pxtorem2 = require('pxtorem2');
 var  $ = gulpLoadPlugins();
-
 var config = {
   path: {
     dist: 'dist',
@@ -45,13 +44,13 @@ function getSource() {
 
 /**
  * 构建js,使用webpack对js进行封装后压缩JS并刷新页面
- * @param  {[type]} )       {             return gulp.src('./src/views*.js')  	.pipe($.plumber())    .pipe(webpackStream({                   entry: getSource().entry,         output: {                        library: 'template',                                  libraryTarget: 'umd',                    filename: '[name].js'         } [description]
+ * @param  {[type]} )       {             return gulp.src('./src/views*.js')    .pipe($.plumber())    .pipe(webpackStream({                   entry: getSource().entry,         output: {                        library: 'template',                                  libraryTarget: 'umd',                    filename: '[name].js'         } [description]
  * @param  {[type]} module: {                                                                                                 loaders: [{                                                 test: /.js$/,                                   loader: 'babel-loader',                                    query: {                                                       presets: ['es2015']                }            }]        }    }).on('error', notify.onError("Error: <% [description]
  * @return {[type]}         [description]
  */
 gulp.task('webpack', function() {
   return gulp.src('./src/views/**/*.js')
-  	.pipe($.plumber())
+    .pipe($.plumber())
     .pipe(webpackStream({
         entry: getSource().entry, //已多次提及的唯一入口文件
         output: {
@@ -122,35 +121,35 @@ gulp.task('images', function() {
     }))))
     .pipe(gulp.dest(config.path.dist));
 
-	return mergeStream(static, views);  
+  return mergeStream(static, views);  
 });
 
 /**
  * 构建css任务
- * @param  {[type]} ){	return gulp.src(['./src/views*.scss|*.css'])	.pipe($.plumber())  .pipe($.sass.sync({    outputStyle: 'expanded',    precision: 10,    includePaths: ['.']  }).on('error', notify.onError("Error: <% [description]
+ * @param  {[type]} ){  return gulp.src(['./src/views*.scss|*.css'])  .pipe($.plumber())  .pipe($.sass.sync({    outputStyle: 'expanded',    precision: 10,    includePaths: ['.']  }).on('error', notify.onError("Error: <% [description]
  * @return {[type]}            [description]
  */
 gulp.task('css', function(){
-	return gulp.src(['./src/views/**/*.scss','./src/views/**/*.css','./src/**/*.scss','./src/**/*.css'])
-	.pipe($.plumber())
+  return gulp.src(['./src/views/**/*.scss','./src/views/**/*.css','./src/**/*.scss','./src/**/*.css'])
+  .pipe($.plumber())
   .pipe($.sass.sync({
     outputStyle: 'expanded',
     precision: 10,
     includePaths: ['.']
   }).on('error', notify.onError("Error: <%= error.message %>")))
-	.pipe($.autoprefixer({ browsers: ['last 2 versions'],cascade: false }))
+  .pipe($.autoprefixer({ browsers: ['last 2 versions'],cascade: false }))
  .pipe(pxtorem2({
     remUnit: 75,
     filterProperties: [],
     remPrecision: 3
   }))
   .pipe(gulp.dest(config.path.dist))
-	.pipe(minifycss())
+  .pipe(minifycss())
   .pipe(rename(function(path){
     path.basename += '.min'
   }))
   .pipe(gulp.dest(config.path.dist))
-	.pipe(browserSync.stream())	
+  .pipe(browserSync.stream()) 
 })
 
 
@@ -161,15 +160,15 @@ gulp.task('fonts', function() {
 
 /**
  * 构建html文件，完成后刷新页面
- * @param  {[type]} ){	return gulp.src('./src/views*.html')	.on('error', notify.onError("Error: <% [description]
+ * @param  {[type]} ){  return gulp.src('./src/views*.html')  .on('error', notify.onError("Error: <% [description]
  * @return {[type]}            [description]
  */
 
 gulp.task('html', function(){
-	return gulp.src('./src/views/**/*.html')
-	.on('error', notify.onError("Error: <%= error.message %>"))
-	.pipe(gulp.dest(config.path.dist + '/page'))
-	.pipe(browserSync.stream())	
+  return gulp.src('./src/views/**/*.html')
+  .on('error', notify.onError("Error: <%= error.message %>"))
+  .pipe(gulp.dest(config.path.dist + '/page'))
+  .pipe(browserSync.stream()) 
 })
 
 /**
@@ -218,13 +217,13 @@ gulp.task('clean', del.bind(null, [config.path.dist]));
 
 /**
  * 代码构建，运行gulp build 对html,scss,webpack任务进行构建
- * @param  {[type]} ){	gulp.start('html')	gulp.start('scss')	gulp.start('webpack')} [description]
+ * @param  {[type]} ){  gulp.start('html')  gulp.start('scss')  gulp.start('webpack')} [description]
  * @return {[type]}                                                                   [description]
  */
 gulp.task('build', ['clean'], function(){
-	gulp.start('fileinclude')
-	gulp.start('css')
-	gulp.start('webpack')
+  gulp.start('fileinclude')
+  gulp.start('css')
+  gulp.start('webpack')
   gulp.start('js')
   gulp.start('images')
   console.log('文件构建...')

@@ -1,3 +1,9 @@
+### 配置说明
+* 该配置是基于`browsersync + gulp + webpack + jade + handlebars`等前端工程化配置方案
+* 适合使用`jQuery、zepto`等框架开发的页面
+* 更重要的兼容PC和移动端
+* 注意：移动端采用了淘宝方案，在书写样式的时候直接写px，使用构建命令后会自动转化为rem！！！不再需要心算，计算器计算REM啦！！！
+
 ### Gulp+webpack构建配置
 * 服务器
  * 使用了`browser-sync`；详情可访问`http://www.browsersync.cn`
@@ -7,6 +13,12 @@
  * 使用了`gulp-sass`来编译`.scss`文件
 * JS构建
  * 使用了`webpack`编译`.js` 
+
+### 启动服务
+* git clone git@github.com:minguman/browsersync-gulp-demo.git
+* `npm(cnpm) install` 安装依赖
+* `gulp` 启动服务
+
 
 
 ### Gulp任务
