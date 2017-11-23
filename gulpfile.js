@@ -126,7 +126,8 @@ gulp.task('images', function() {
 
 /**
  * 构建css任务
- * @param  {[type]} ){  return gulp.src(['./src/views*.scss|*.css'])  .pipe($.plumber())  .pipe($.sass.sync({    outputStyle: 'expanded',    precision: 10,    includePaths: ['.']  }).on('error', notify.onError("Error: <% [description]
+ * @param  {[type]} ){  
+ * return gulp.src(['./src/views*.scss|*.css'])  .pipe($.plumber())  .pipe($.sass.sync({    outputStyle: 'expanded',    precision: 10,    includePaths: ['.']  }).on('error', notify.onError("Error: <% [description]
  * @return {[type]}            [description]
  */
 gulp.task('css', function(){
@@ -138,7 +139,7 @@ gulp.task('css', function(){
     includePaths: ['.']
   }).on('error', notify.onError("Error: <%= error.message %>")))
   .pipe($.autoprefixer({ browsers: ['last 2 versions'],cascade: false }))
- .pipe(pxtorem2({
+  .pipe(pxtorem2({
     remUnit: 75,
     filterProperties: [],
     remPrecision: 3
@@ -182,7 +183,7 @@ gulp.task('watch', function() {
   gulp.watch(['./src/**/*.scss','./src/**/*.css'], ['css']);
   gulp.watch('./src/views/**/*.js', ['webpack']);
   gulp.watch('./src/**/images/*', ['images']);
-  console.log('已监听html,style,js文件改动')
+  console.log('已监听html, style, css, js文件改动')
 });
 
 /**
@@ -202,12 +203,13 @@ gulp.task('serve', function(){
 
 
 gulp.task('fileinclude', function() {  
-    gulp.src(['./src/views/**/*.html'])  
-        .pipe(fileinclude({  
-          prefix: '@@',  
-          basepath: '@file'  
-        }))  
-    .pipe(gulp.dest(config.path.dist));  
+  gulp.src(['./src/views/**/*.html'])  
+  .pipe(fileinclude({  
+    prefix: '@@',  
+    basepath: '@file'  
+  }))  
+  .pipe(gulp.dest(config.path.dist))
+  .pipe(browserSync.stream())   
 });  
 
 /**
@@ -226,7 +228,7 @@ gulp.task('build', ['clean'], function(){
   gulp.start('webpack')
   gulp.start('js')
   gulp.start('images')
-  console.log('文件构建...')
+  console.log('文件构建中...')
 })
 
 /**

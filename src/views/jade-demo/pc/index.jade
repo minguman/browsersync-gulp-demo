@@ -1,0 +1,33 @@
+extends ../components/layout
+block css
+	link(href="./home/index.min.css" type="text/css" rel="stylesheet")
+block content
+	div.view
+		include ../components/home/navbar
+		div.container
+			include ../components/home/slide
+			- menuArr = [{"name": "橱柜家电", "iconfontName": "icon-chux"},{"name": "卫浴设备", "iconfontName": "icon-weix"},{"name": "地板门窗", "iconfontName": "icon-menx"},{"name": "住宅家具", "iconfontName": "icon-jux"},{"name": "家具软装", "iconfontName": "icon-ruanx"},{"name": "基础建材", "iconfontName": "icon-caix"},{"name": "大家电", "iconfontName": "icon-dianx"},{"name": "装修公司", "iconfontName": "icon-zhuangxiux"}]
+				include ../components/home/menu
+			div.hr
+			include ../components/home/huati
+			div.tgrayborder20
+			include ../components/home/dianquan
+			div.tgrayborder20
+			- goodsMenu = [{"name": "大家电", "icon": "http://3.tthunbohui.cn/n/00403tIq00dN1AA5rM4o168.jpg"},{"name": "小家电", "icon": "http://3.tthunbohui.cn/n/00403tIq00dN1AA5rM4o168.jpg"},{"name": "电脑数码", "icon": "http://3.tthunbohui.cn/n/00403tIq00dN1AA5rM4o168.jpg"},{"name": "榻榻米", "icon": "http://3.tthunbohui.cn/n/00403tIq00dN1AA5rM4o168.jpg"},{"name": "装修设计", "icon": "http://3.tthunbohui.cn/n/00403tIq00dN1AA5rM4o168.jpg"},{"name": "衣橱", "icon": "http://3.tthunbohui.cn/n/00403tIq00dN1AA5rM4o168.jpg"},{"name": "健康新生活", "icon": "http://3.tthunbohui.cn/n/00403tIq00dN1AA5rM4o168.jpg"},{"name": "视听新世界", "icon": "http://3.tthunbohui.cn/n/00403tIq00dN1AA5rM4o168.jpg"}]
+				//- include ../components/home/vip-goods-menu				
+			div.global-ad
+			div.tgrayborder20
+			include ../components/home/guide
+			div.tgrayborder98
+			include ../components/footer
+block script
+	script.
+		var menuObj = [];
+		    menuObj[0] = new Object();
+		    menuObj[0].name = "首页";
+		    menuObj[0].url = "http://hz.mall.hzjiehun.bid/wap";
+		    menuObj[1] = new Object();
+		    menuObj[1].name = "家博会";
+		    menuObj[1].url = "http://hz.mall.hzjiehun.bid/wap";
+		    var navLink = JSON.stringify(menuObj);
+	script(src="/home/index.min.js")
