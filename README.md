@@ -16,8 +16,9 @@
 
 ### 启动服务
 * git clone git@github.com:minguman/browsersync-gulp-demo.git
+* 进入到`browsersync-gulp-demo`目录下
 * `npm(cnpm) install` 安装依赖
-* `gulp` 启动服务
+* `gulp` 启动服务后会自动打开`http://localhost:3000/demo/`,如果没有请直接在地址栏里输入该地址
 
 
 
@@ -35,9 +36,9 @@
 * 如果不是用于移动端，请注释`gulp.task('css'...)`任务下的以下代码，该代码用于转化PX为REM
 ```
  //.pipe(pxtorem2({
- //   remUnit: 75,
- //   filterProperties: [],
- //   remPrecision: 3
+ //   remUnit: 75, //设置REM转化基数（设计稿的实际宽度/10）
+ //   filterProperties: [], //不需要做转化的属性名称, ['width', 'padding'] 
+ //   remPrecision: 3 //设置转化最小值（px）,如果px小于3便不在做转化
  // }))
 ```
 
