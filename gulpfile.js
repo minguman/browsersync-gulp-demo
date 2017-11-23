@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var path = require('path');
 var del = require('del');
+var gulpjade = require("gulp-jade");
 var minifycss = require('gulp-clean-css');
 var fileinclude  = require('gulp-file-include');  
 var mergeStream = require('merge-stream');
@@ -140,7 +141,7 @@ gulp.task('css', function(){
   }).on('error', notify.onError("Error: <%= error.message %>")))
   .pipe($.autoprefixer({ browsers: ['last 2 versions'],cascade: false }))
   .pipe(pxtorem2({
-    remUnit: 75,
+    remUnit: 64,
     filterProperties: [],
     remPrecision: 3
   }))
@@ -172,6 +173,19 @@ gulp.task('html', function(){
   .pipe(browserSync.stream()) 
 })
 
+
+gulp.task('jade', function(){
+  return  gulp.src("src/views/**/*.jade")
+  .on('error', notify.onError("Error: <%= error.message %>"))
+  .pipe(plumber())
+  .pipe(gulpjade({
+      pretty: true
+  }))  
+  .pipe(rename(changePathDirname))    
+  .pipe(gulp.dest(dist.root))
+  .pipe(browserSync.stream())
+})
+
 /**
  * 监听html、scss、css、js任务，并执行相关任务
  * @param  {[type]} ) { gulp.watch('./src*.html', ['html']);  gulp.watch(['./src*.scss|*.css'], ['scss']);  gulp.watch('./src/views*.js', ['webpack']);  console.log('已监听html,style,js文件改动')} [description]
@@ -179,7 +193,7 @@ gulp.task('html', function(){
  */
 gulp.task('watch', function() { 
   gulp.watch('./src/**/*.html', ['fileinclude']);
-  gulp.watch('./src/**/*.jade', ['fileinclude']);
+  gulp.watch('./src/**/*.jade', ['jade']);
   gulp.watch(['./src/**/*.scss','./src/**/*.css'], ['css']);
   gulp.watch('./src/views/**/*.js', ['webpack']);
   gulp.watch('./src/**/images/*', ['images']);

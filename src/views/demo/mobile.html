@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="Zh-cn">
-@@include("../../components/head/head.html")  
+<!-- 引入头部文件 -->
+@@include("../../components/header/head.html", {
+  "title": "BrowserSync - gulp配置demo"
+}) 
+<!-- 引入动态计算html font-size script  -->
 @@include("../../components/flexible.html")   
 <body>
-	<h3 style="font-size: 14px; padding: 20px;">
-   这段话是原来便有的 
-  </h3>
-  
-	<div id="bhs"></div>
-  @@include("../../components/footer/footer.html", {
+  <div class="container">
+    <div class="login-form">
+      <div class="form-body">
+<!--         <div class="in-logonBox" style="display: block;">
+          <div class="ln-row">
+            <span class="ln-span">账号：</span>
+            <input class="ln-input" type="text">
+          </div>
+          <div class="ln-row">
+              <span class="ln-span">密码：</span>
+              <input class="ln-input" type="text">
+          </div>
+          <div class="ln-rowTwo">
+              <a class="ln-logon" href="##">注册账号</a>
+              <button class="ln-goGame" onclick="javascript:window.location.href='main.html'">进入游戏</button>
+              <a class="ln-forgetPassword" href="##">忘记密码</a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- 引入页面底部内容 -->
+<!--   @@include("../../components/footer/footer.html", {
     "title": "这是页面底部",
     "btn": "这是一个按钮"
-  }) 
+  })  -->
   <script type="text/javascript" src="/static/js/jquery3.2.1.min.js"></script>
   <script type="text/javascript" src="./demo.min.js"></script>
 </body>

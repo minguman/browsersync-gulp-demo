@@ -1,0 +1,20 @@
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,pre,td,textarea,th,ul,p{margin:0;padding:0;}
+body,button,input,select,textarea{font:12px/1.5 'Microsoft Yahei',arial,'宋体';color:#000;}
+body {color: #333;font-size: 14px;font-family: 'Microsoft Yahei';background-color: #fff;width:750px;margin:0 auto;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0;vertical-align: middle;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+address,cite,dfn,var{font-style:normal;}
+code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+small{font-size:12px;}
+ul,ol{list-style-type:none;}
+a{text-decoration:none;color:white;vertical-align:baseline;zoom:1;}
+a:hover{text-decoration:none !important;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+legend{color:#000;}
+button,input,select,textarea{outline:none;}
+a{cursor:pointer;color:#369;}
+b{font-weight: normal;}
+i{font-style:normal;font-weight:normal;}
+ins{text-decoration:none;}
